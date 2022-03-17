@@ -1,0 +1,139 @@
+<div class="container mt-5">
+    <div class="card text-center">
+      <div class="card-header row">
+        <div class="col-9">
+            <ul class="nav nav-pills card-header-pills">
+              <li class="nav-item">
+                <a class="btn btn-card" (click)="displayFattura()">Fattura</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn btn-card" (click)="displayCliente()">Cliente</a>
+              </li>
+            </ul>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-edit float-right btn-outline-dark" (click)="selectToEdit()" >Modifica Fattura <i class="bi bi-pencil-fill"></i></button>
+        </div>
+      </div>
+
+            <!---------Fatture-------->
+
+      <div class="card-body" *ngIf="showFattura">
+        <h5 class="card-title">Fattura</h5>
+        <hr>
+        <h6 class="card-title">Data</h6>
+          <p class="card-text">{{fatturaDetail.data}}</p>
+          <hr>
+          <h6 class="card-title">Numero</h6>
+          <p class="card-text">{{fatturaDetail.numero}}</p>
+          <hr>
+          <h6 class="card-title">Anno</h6>
+          <p class="card-text">N. {{fatturaDetail.anno}}</p>
+          <hr>
+          <h6 class="card-title">Importo</h6>
+          <p class="card-text">{{fatturaDetail.importo}}</p>
+          <hr>
+          <h6 class="card-title">Stato</h6>
+          <p class="card-text">{{fatturaDetail.stato.nome}}</p>
+      </div>
+
+
+        <!---------Clienti-------->
+
+          <div class="card-body" *ngIf="showCliente">
+        <h5 class="card-title">Cliente</h5>
+        <hr>
+        <h6 class="card-title">Nome e Cognome</h6>
+          <p class="card-text">{{fatturaDetail.cliente.nomeContatto}} {{fatturaDetail.cliente.cognomeContatto}}</p>
+          <hr>
+          <h6 class="card-title">Ragione Sociale</h6>
+          <p class="card-text">{{fatturaDetail.cliente.ragioneSociale}}</p>
+          <hr>
+          <h6 class="card-title">Partita IVA</h6>
+          <p class="card-text">N. {{fatturaDetail.cliente.partitaIva}}</p>
+          <hr>
+          <h6 class="card-title">Email e PEC</h6>
+          <p class="card-text">{{fatturaDetail.cliente.email}} - {{fatturaDetail.cliente.pec}}</p>
+          <hr>
+          <h6 class="card-title">Telefono</h6>
+          <p class="card-text">{{fatturaDetail.cliente.telefono}}</p>
+          <hr>
+          <h6 class="card-title">Tipo Cliente</h6>
+          <p class="card-text">{{fatturaDetail.cliente.tipoCliente}}</p>
+          <div class="container mt-5">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5>Sede Operativa</h5>
+                <hr />
+                <h6 class="card-title">Indirizzo</h6>
+                <p class="card-text">
+                  {{ fatturaDetail.cliente.indirizzoSedeOperativa.via }}
+                </p>
+                <hr />
+                <h6 class="card-title">Civico</h6>
+                <p class="card-text">
+                  {{ fatturaDetail.cliente.indirizzoSedeOperativa.civico }}
+                </p>
+                <hr />
+                <h6 class="card-title">Cap</h6>
+                <p class="card-text">
+                  {{ fatturaDetail.cliente.indirizzoSedeOperativa.cap }}
+                </p>
+                <hr />
+                <h6 class="card-title">Località</h6>
+                <p class="card-text">
+                  {{ fatturaDetail.cliente.indirizzoSedeOperativa.localita }}
+                </p>
+                <hr />
+                <h6 class="card-title">Provincia</h6>
+                <p class="card-text">
+                  {{ fatturaDetail.cliente.indirizzoSedeOperativa.comune.provincia.nome }}
+                </p>
+                <hr />
+                <h6 class="card-title">Comune</h6>
+                <p class="card-text">
+                  {{ fatturaDetail.cliente.indirizzoSedeOperativa.comune.nome }}
+                </p>
+                <hr />
+              </div>
+            </div>
+          </div>
+          <div class="container mt-5">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5>Sede legale</h5>
+                <hr />
+                <h6 class="card-title">Indirizzo</h6>
+                <p class="card-text">{{ fatturaDetail.cliente.indirizzoSedeLegale.via }}</p>
+                <hr />
+                <h6 class="card-title">Civico</h6>
+                <p class="card-text">
+                  {{ fatturaDetail.cliente.indirizzoSedeLegale.civico }}
+                </p>
+                <hr />
+                <h6 class="card-title">Cap</h6>
+                <p class="card-text">{{ fatturaDetail.cliente.indirizzoSedeLegale.cap }}</p>
+                <hr />
+                <h6 class="card-title">Località</h6>
+                <p class="card-text">
+                  {{ fatturaDetail.cliente.indirizzoSedeLegale.localita }}
+                </p>
+                <hr />
+                <h6 class="card-title">Provincia</h6>
+                <p class="card-text">
+                  {{ fatturaDetail.cliente.indirizzoSedeLegale.comune.provincia.nome }}
+                </p>
+                <hr />
+                <h6 class="card-title">Comune</h6>
+                <p class="card-text">
+                  {{ fatturaDetail.cliente.indirizzoSedeLegale.comune.nome }}
+                </p>
+                <hr />
+              </div>
+            </div>
+      </div>
+
+
+
+    </div>
+

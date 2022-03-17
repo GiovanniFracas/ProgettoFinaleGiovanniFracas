@@ -1,0 +1,16 @@
+<div class="sfondo">
+  <div class="wrapper mt-5 fadeInDown">
+      <div id="formContent" class="pt-5">
+        <h2 class="text-white">Login</h2>
+        <!-- Login Form -->
+        <form>
+          <input [(ngModel)]="payload.username" type="email" id="login" class="fadeIn second" name="email" placeholder="email">
+          <input [(ngModel)]="payload.password" type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+          <button id="subBtn" type="submit" class="fadeIn btn btn-sm fourth" (click)="login()">Login</button>
+        </form>
+
+
+
+      </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand"[routerLink]="['/dashboard']" routerLinkActive="router-link-active" >EPICODE CRM</a>
+  <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <div class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <ul class="navbar-nav">
+        <li *ngIf="isLogged()" class="nav-item">
+          <a class="nav-link"  [routerLink]="['']" routerLinkActive="router-link-active">Home</a>
+        </li>
+        <li *ngIf="isLogged()" class="nav-item">
+          <a class="nav-link"  [routerLink]="['/clienti/page/0']" routerLinkActive="router-link-active">Clienti</a>
+        </li>
+        <li *ngIf="!isLogged()" class="nav-item">
+          <a class="nav-link" [routerLink]="['/']" routerLinkActive="router-link-active" >Login</a>
+        </li>
+        <li *ngIf="!isLogged()" class="nav-item">
+          <a class="nav-link"[routerLink]="['/signUp']" routerLinkActive="router-link-active" >SingUp</a>
+        </li>
+        <li *ngIf="isLogged()" class="nav-item">
+          <a class="nav-link" [routerLink]="['/fatture/page/0']" routerLinkActive="router-link-active">Fatture</a>
+        </li>
+        <li *ngIf="isLogged()" class="nav-item">
+          <a class="nav-link" [routerLink]="['/users/page/0']" routerLinkActive="router-link-active">Utenti</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+  <span><button id="btnLogOut" class="btn text-light float-right" (click)="logOut()"  type="submit">Logout</button></span>
+</nav>
+
+
+
+
+
+
+
+<!----------SIDEBAR-------------->
+<!--
+<div id="sideBar"  class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block  sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" [routerLink]="['/dashboard']" routerLinkActive="router-link-active"  aria-current="page">
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/clienti/page/:page']" routerLinkActive="router-link-active" >Clienti</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/province/page/:page']" routerLinkActive="router-link-active">Province</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/comuni/page/:page']" routerLinkActive="router-link-active">Comuni</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/fatture/page/:page']" routerLinkActive="router-link-active">Fatture</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/users']" routerLinkActive="router-link-active">Utenti</a>
+          </li>
+        </ul>
+        <button id="btnLogOut" class="btn float-left mt-5"  type="submit" (click)="logOut()">Logout <i class="bi bi-box-arrow-right"></i></button>
+      </div>
+    </nav>
+      </div>
+      </div>
+
+ -->
+

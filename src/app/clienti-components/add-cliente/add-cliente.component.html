@@ -1,0 +1,72 @@
+<form class="mt-5">
+    <div class="form-row">
+      <div class="form-group col-md-10">
+        <h2 id="head" class="mb-4  text-light">Aggiungi un Cliente</h2>
+      </div>
+      <div class="form-group col-md-2">
+        <h2 class=" btnBack float-right ro" [routerLink]="['/clienti/page/:page']" routerLinkActive="router-link-active" ><i class="bi bi-arrow-left-square-fill"></i></h2>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Nome</label>
+        <input type="text" [(ngModel)]="newCliente.nomeContatto"  name="nomeContatto" class="form-control">
+      </div>
+      <div class="form-group col-md-6">
+        <label>Cognome</label>
+        <input type="text" [(ngModel)]="newCliente.cognomeContatto" name="cognomeContatto" class="form-control">
+      </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Ragione Sociale</label>
+          <input type="text" [(ngModel)]="newCliente.ragioneSociale" name="ragioneSociale" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+          <label>Partita IVA</label>
+          <input type="number" [(ngModel)]="newCliente.partitaIva" name="partitaIva" class="form-control">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Email</label>
+          <input type="email" [(ngModel)]="newCliente.email" name="email" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+          <label>PEC</label>
+          <input type="email" [(ngModel)]="newCliente.pec" name="pec" class="form-control">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label >Telefono Contatto</label>
+          <input type="text" class="form-control" [(ngModel)]="newCliente.telefonoContatto" name="telefonoContatto" id="telefonoContattoInput">
+        </div>
+        <div class="form-group col-md-6">
+          <label>Email Contatto</label>
+          <input type="email" class="form-control" [(ngModel)]="newCliente.emailContatto" name="emailContatto" id="emailContattoInput">
+        </div>
+      </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Telefono</label>
+        <input type="phone" [(ngModel)]="newCliente.telefono" name="telefono" class="form-control">
+      </div>
+      <div class="form-group col-md-6">
+        <label>Tipo Cliente</label>
+        <select class="form-control" [(ngModel)]="newCliente.tipoCliente" name="ragioneSociale">
+          <option selected>...</option>
+          <option>SRL</option>
+          <option>SPA</option>
+          <option>SAS</option>
+          <option>PA</option>
+        </select>
+      </div>
+    </div>
+  </form>
+
+
+
+
+  <button type="submit" class="btn btnAddUser col my-3 btn-success" (click)="addCliente(newCliente)">Aggiungi</button>
+

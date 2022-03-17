@@ -1,0 +1,120 @@
+<div class="container mt-5">
+  <div class="card text-center">
+    <div class="card-header row">
+      <div class="col-6">
+        <button
+          type="button"
+          (click)="selectToEdit()"
+          class="btn btn-edit m-2 float-right btn-outline-dark"
+        >
+          Modifica Cliente <i class="bi bi-pencil-fill"></i>
+        </button>
+        <button
+          type="button"
+          (click)="addFattura()"
+          class="btn btn-edit m-2 float-right btn-outline-dark"
+        >
+          Aggiungi Fattura <i class="bi bi-pencil-fill"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title">Cliente</h5>
+      <hr />
+      <h6 class="card-title">Nome e Cognome</h6>
+    </div>
+    <p class="card-text">
+      {{ clienteDetail.nomeContatto }} {{ clienteDetail.cognomeContatto }}
+    </p>
+    <hr />
+    <h6 class="card-title">Ragione Sociale</h6>
+    <p class="card-text">{{ clienteDetail.ragioneSociale }}</p>
+    <hr />
+    <h6 class="card-title">Partita IVA</h6>
+    <p class="card-text">N. {{ clienteDetail.partitaIva }}</p>
+    <hr />
+    <h6 class="card-title">Email e PEC</h6>
+    <p class="card-text">{{ clienteDetail.email }} - {{ clienteDetail.pec }}</p>
+    <hr />
+    <h6 class="card-title">Telefono</h6>
+    <p class="card-text">{{ clienteDetail.telefono }}</p>
+    <hr />
+    <h6 class="card-title">Tipo Cliente</h6>
+    <p class="card-text">{{ clienteDetail.tipoCliente }}</p>
+    <hr />
+  </div>
+    <div class="container mt-5">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5>Sede Operativa</h5>
+          <hr />
+          <h6 class="card-title">Indirizzo</h6>
+          <p class="card-text">
+            {{ clienteDetail.indirizzoSedeOperativa.via }}
+          </p>
+          <hr />
+          <h6 class="card-title">Civico</h6>
+          <p class="card-text">
+            {{ clienteDetail.indirizzoSedeOperativa.civico }}
+          </p>
+          <hr />
+          <h6 class="card-title">Cap</h6>
+          <p class="card-text">
+            {{ clienteDetail.indirizzoSedeOperativa.cap }}
+          </p>
+          <hr />
+          <h6 class="card-title">Località</h6>
+          <p class="card-text">
+            {{ clienteDetail.indirizzoSedeOperativa.localita }}
+          </p>
+          <hr />
+          <h6 class="card-title">Provincia</h6>
+          <p class="card-text">
+            {{ clienteDetail.indirizzoSedeOperativa.comune.provincia.nome }}
+          </p>
+          <hr />
+          <h6 class="card-title">Comune</h6>
+          <p class="card-text">
+            {{ clienteDetail.indirizzoSedeOperativa.comune.nome }}
+          </p>
+          <hr />
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5>Sede legale</h5>
+          <hr />
+          <h6 class="card-title">Indirizzo</h6>
+          <p class="card-text">{{ clienteDetail.indirizzoSedeLegale.via }}</p>
+          <hr />
+          <h6 class="card-title">Civico</h6>
+          <p class="card-text">
+            {{ clienteDetail.indirizzoSedeLegale.civico }}
+          </p>
+          <hr />
+          <h6 class="card-title">Cap</h6>
+          <p class="card-text">{{ clienteDetail.indirizzoSedeLegale.cap }}</p>
+          <hr />
+          <h6 class="card-title">Località</h6>
+          <p class="card-text">
+            {{ clienteDetail.indirizzoSedeLegale.localita }}
+          </p>
+          <hr />
+          <h6 class="card-title">Provincia</h6>
+          <p class="card-text">
+            {{ clienteDetail.indirizzoSedeLegale.comune.provincia.nome }}
+          </p>
+          <hr />
+          <h6 class="card-title">Comune</h6>
+          <p class="card-text">
+            {{ clienteDetail.indirizzoSedeLegale.comune.nome }}
+          </p>
+          <hr />
+        </div>
+      </div>
+    </div>
+  </div>
+

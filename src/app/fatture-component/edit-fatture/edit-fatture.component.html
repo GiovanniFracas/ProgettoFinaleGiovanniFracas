@@ -1,0 +1,37 @@
+<form class="mt-5">
+  <div class="form-row">
+    <div class="form-group col-md-10">
+      <h2 id="head" class="mb-4  text-light">Modifica una Fattura</h2>
+    </div>
+    <div class="form-group col-md-2">
+      <h2 class=" btnBack float-right" (click)="back()"><i class="bi bi-arrow-left-square-fill"></i></h2>
+    </div>
+  </div>     <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Data</label>
+        <input type="text" [(ngModel)]="editFattura.data"  name="data" class="form-control">
+      </div>
+      <div class="form-group col-md-6">
+        <label>Numero</label>
+        <input type="text" [(ngModel)]="editFattura.numero" name="numero" class="form-control">
+      </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Anno</label>
+          <input type="text" [(ngModel)]="editFattura.anno" name="anno" class="form-control">
+        </div>
+        <div class="form-group col-md-3">
+          <label>Importo</label>
+          <input type="text" [(ngModel)]="editFattura.importo"  name="importo" class="form-control">
+        </div>
+      
+        <div class="form-group col-md-3">
+          <label>Stato</label>
+          <select type="text" [(ngModel)]="editFattura.stato" name="nome" class="form-control">
+            <option *ngFor="let item of statoFattura" [ngValue]="item">{{item.nome}}></option>
+           </select> 
+        </div>
+    </div>
+  </form>
+  <button type="submit" (click)="saveFattura(editFattura)" class="btn btnAddUser col my-3 btn-success">Salva</button>

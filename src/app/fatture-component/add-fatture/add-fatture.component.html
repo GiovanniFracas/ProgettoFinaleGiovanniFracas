@@ -1,0 +1,48 @@
+<form class="mt-5">
+  <div class="form-row">
+    <div class="form-group col-md-10">
+      <h2 id="head" class="mb-4  ">Aggiungi una Fattura</h2>
+      <h4 >{{clientiFattura.ragioneSociale}}</h4>
+    </div>
+    <div class="form-group col-md-2">
+      <h2 class=" btnBack float-right" [routerLink]="['/fatture/page/:page']" routerLinkActive="router-link-active" ><i class="bi bi-arrow-left-square-fill"></i></h2>
+    </div>
+  </div>
+  <div class="form-row">
+      <div class="form-group col-md-4">
+        <label>Data</label>
+        <input type="date" [(ngModel)]="newFattura.data" name="data" class="form-control">
+      </div>
+      <div class="form-group col-md-4">
+        <label>Numero</label>
+        <input type="number" [(ngModel)]="newFattura.numero" name="numero" class="form-control">
+      </div>
+      <div class="form-group col-md-4">
+        <label>Cliente</label>
+        <input disabled type="text" [(ngModel)]="clientiFattura.nomeContatto"  name="nomeContatto" class="form-control">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+          <label>Anno</label>
+          <input type="number" [(ngModel)]="newFattura.anno" name="anno" class="form-control">
+        </div>
+        <div class="form-group col-md-4">
+          <label>Importo</label>
+          <input type="number" [(ngModel)]="newFattura.importo" name="importo" class="form-control">
+        </div>
+
+
+        <div class="form-group col-md-4">
+          <label>Stato</label>
+          <select type="text" [(ngModel)]="newFattura.stato" name="nome" class="form-control">
+              <option *ngFor="let item of statoFattura" [ngValue]="item">{{item.nome}}></option>
+             </select>
+        </div>
+        </div>
+  </form>
+
+
+  <button type="submit" class="btn btnAddUser col my-3 btn-success" (click)="saveFattura(newFattura)" >Aggiungi</button>
+
+
