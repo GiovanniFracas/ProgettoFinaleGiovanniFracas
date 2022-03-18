@@ -1,5 +1,5 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand"[routerLink]="['/dashboard']" routerLinkActive="router-link-active" >EPICODE CRM</a>
+  <a class="navbar-brand mx-5"[routerLink]="['/']" routerLinkActive="router-link-active" >EPICODE CRM</a>
   <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,28 +7,28 @@
     <div class="navbar-nav mr-auto mt-2 mt-lg-0">
       <ul class="navbar-nav">
         <li *ngIf="isLogged()" class="nav-item">
-          <a class="nav-link"  [routerLink]="['']" routerLinkActive="router-link-active">Home</a>
+          <a class="nav-link"  [routerLink]="['']" routerLinkActive="router-link-active"><i class="bi bi-house-door-fill"></i><strong><b>Home</b></strong></a>
         </li>
         <li *ngIf="isLogged()" class="nav-item">
-          <a class="nav-link"  [routerLink]="['/clienti/page/0']" routerLinkActive="router-link-active">Clienti</a>
+          <a class="nav-link"  [routerLink]="['/clienti/page/0']" routerLinkActive="router-link-active"><i class="bi bi-people-fill"></i> <strong><b>Clienti</b></strong></a>
         </li>
         <li *ngIf="!isLogged()" class="nav-item">
-          <a class="nav-link" [routerLink]="['/']" routerLinkActive="router-link-active" >Login</a>
+          <a class="nav-link" [routerLink]="['/']" routerLinkActive="router-link-active" ><strong>Login</strong></a>
         </li>
         <li *ngIf="!isLogged()" class="nav-item">
-          <a class="nav-link"[routerLink]="['/signUp']" routerLinkActive="router-link-active" >SingUp</a>
+          <a class="nav-link"[routerLink]="['/signUp']" routerLinkActive="router-link-active" ><strong>SingUp</strong></a>
         </li>
         <li *ngIf="isLogged()" class="nav-item">
-          <a class="nav-link" [routerLink]="['/fatture/page/0']" routerLinkActive="router-link-active">Fatture</a>
+          <a class="nav-link" [routerLink]="['/fatture/page/0']" routerLinkActive="router-link-active"><i class="bi bi-journal-text"></i><strong><b>Fatture</b></strong></a>
         </li>
         <li *ngIf="isLogged()" class="nav-item">
-          <a class="nav-link" [routerLink]="['/users/page/0']" routerLinkActive="router-link-active">Utenti</a>
+          <a class="nav-link" [routerLink]="['/users/page/0']" routerLinkActive="router-link-active"><i class="bi bi-person-badge"></i><strong><b>Utenti</b></strong></a>
         </li>
       </ul>
 
     </div>
   </div>
-  <span><button id="btnLogOut" class="btn text-light float-right" (click)="logOut()"  type="submit">Logout</button></span>
+  <span><button id="btnLogOut" class="btn text-light float-right" (click)="logOut()"  type="submit"><i class="bi bi-box-arrow-right"></i><strong><b>Logout</b></strong></button></span>
 </nav>
 
 

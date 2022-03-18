@@ -6,7 +6,7 @@ import { FattureService } from 'src/app/services/fatture/fatture.service';
 @Component({
   selector: 'app-fatture-detail',
   templateUrl: './fatture-detail.component.html',
-  styleUrls: ['./fatture-detail.component.css']
+  styleUrls: ['./fatture-detail.component.scss']
 })
 export class FattureDetailComponent implements OnInit {
 

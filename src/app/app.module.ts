@@ -22,6 +22,7 @@ import { EditClienteComponent } from './clienti-components/edit-cliente/edit-cli
 import { ClienteDetailComponent } from './clienti-components/cliente-detail/cliente-detail.component';
 import { FattureDetailComponent } from './fatture-component/fatture-detail/fatture-detail.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     FattureClienteComponent,
     FattureComponent,
     FattureDetailComponent,
-    SignUpComponent
+    SignUpComponent,
+    HomeComponent
 
   ],
   imports: [

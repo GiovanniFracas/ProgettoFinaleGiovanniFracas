@@ -1,0 +1,21 @@
+@import '/variables.scss';
+.card-header{
+  width: 100%;
+  margin: 0;
+
+}
+.card-title{
+  color: $colore1;
+}
+h5{
+  color: $colore1;
+}
+.card{
+  margin-bottom: 50px;
+  border: 2px solid $colore1;
+}
+a:hover{
+ color: $colore1;
+ text-decoration: underline;
+}
+

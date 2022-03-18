@@ -1,0 +1,31 @@
+i {
+  color:#fff;
+  padding:0 10px;
+}
+b {
+
+  padding: 15px 0;
+  display: none;
+}
+a:hover {
+  color: #fff;
+}
+a:hover i {
+  display: none;
+}
+a:hover b {
+  display: inline;
+}
+span:hover {
+  color: #fff;
+}
+span:hover i {
+  display: none;
+}
+span:hover b {
+  display: inline;
+}
+
+i{
+  font-size: 115%;
+}

@@ -68,4 +68,11 @@ export class FattureClienteComponent implements OnInit {
     }
     return null
   }
+  getRosso(nome: string){
+    if(nome=='PAGATA'){
+      return 'lightblue'
+    }
+    return 'pink'
+
+  }
 }

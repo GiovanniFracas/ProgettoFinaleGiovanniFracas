@@ -21,7 +21,7 @@
           <td>{{ item.numero }}</td>
           <td>{{ item.anno }}</td>
           <td>{{ item.importo }}</td>
-          <td>{{ item.stato.nome }}</td>
+          <td [ngStyle]="{'background-color': getRosso(item.stato.nome)}">{{ item.stato.nome }}</td>
           <td>{{ item.cliente.ragioneSociale }}</td>
           <td>
             <button
@@ -35,7 +35,7 @@
           <td>
             <button
               type="button"
-              class="btn btn-sm btn-inf btn-outline-primary"
+              class="btn btn-sm btn-inf btn-outline-info"
               (click)="fattureDetail(item)"
             >
               <i class="bi bi-info-circle"></i>

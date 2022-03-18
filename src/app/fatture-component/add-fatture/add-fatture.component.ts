@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Clienti } from 'src/app/classes/clienti/clienti';
 import { Fatture } from 'src/app/classes/fatture/fatture';
 import { StatoFattura } from 'src/app/classes/stato-fattura/stato-fattura';
 
 import { ClientiService } from 'src/app/services/clienti/clienti.service';
 import { FattureService } from 'src/app/services/fatture/fatture.service';
+import { Location } from '@angular/common'
 
 
 
 @Component({
   selector: 'app-add-fatture',
   templateUrl: './add-fatture.component.html',
-  styleUrls: ['./add-fatture.component.css']
+  styleUrls: ['./add-fatture.component.scss']
 })
 export class AddFattureComponent implements OnInit {
 
@@ -21,7 +22,7 @@ export class AddFattureComponent implements OnInit {
 
   clientiFattura:Clienti = new Clienti
 
-  constructor(private fattureService:FattureService,private clientiService:ClientiService, private route:ActivatedRoute) { }
+  constructor(private fattureService:FattureService,private clientiService:ClientiService, private route:ActivatedRoute, private location:Location) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(d =>{
@@ -47,6 +48,9 @@ export class AddFattureComponent implements OnInit {
     'success'
     ))
     this.newFattura = new Fatture
+  }
+  indietro(){
+    this.location.back();
   }
 
 }

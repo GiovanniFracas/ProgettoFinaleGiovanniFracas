@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-clienti',
   templateUrl: './clienti.component.html',
-  styleUrls: ['./clienti.component.css']
+  styleUrls: ['./clienti.component.scss']
 })
 
 

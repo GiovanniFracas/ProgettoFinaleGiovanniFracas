@@ -1,6 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+@import"/variables.scss";
 .page-item{
   cursor: pointer;
 }
 
+.page-link{
+  color: $colore1;
+}
+thead{
+  tr{
+    color: $colore1;
+  }
+}

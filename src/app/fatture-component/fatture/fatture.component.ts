@@ -81,11 +81,17 @@ export class FattureComponent implements OnInit {
     this.pagina = null
   }
   getColor(n:number):string|null{
-
     if(n==this.paginacorrente){
       return 'lightblue'
     }
     return null
+  }
+  getRosso(nome: string){
+    if(nome=='PAGATA'){
+      return 'lightblue'
+    }
+    return 'pink'
+
   }
 
 }

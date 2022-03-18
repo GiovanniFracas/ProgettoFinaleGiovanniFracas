@@ -5,7 +5,7 @@
       <h4 >{{clientiFattura.ragioneSociale}}</h4>
     </div>
     <div class="form-group col-md-2">
-      <h2 class=" btnBack float-right" [routerLink]="['/fatture/page/:page']" routerLinkActive="router-link-active" ><i class="bi bi-arrow-left-square-fill"></i></h2>
+      <h2 class=" btnBack float-right" (click)="indietro()" routerLinkActive="router-link-active" ><i class="bi bi-arrow-left-square-fill"></i></h2>
     </div>
   </div>
   <div class="form-row">

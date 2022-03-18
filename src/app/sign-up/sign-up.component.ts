@@ -22,13 +22,9 @@ export class SignUpComponent implements OnInit {
     console.log(form.value);
 
     this.authSrv.signup(form.value).subscribe(res => {
-      localStorage.setItem('accessToken', res.accessToken);
-      localStorage.setItem('currentUser', JSON.stringify(res.id));
-      this.authSrv.currentUser = res;
       console.log(res);
-      this.router.navigate(['dashboard'])
       alert('Registrazione avvenuta!')
-      this.router.navigate(['/login']);
+      this.router.navigate(['/']);
     });
 
   }

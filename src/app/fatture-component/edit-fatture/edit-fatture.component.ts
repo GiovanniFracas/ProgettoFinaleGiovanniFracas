@@ -9,7 +9,7 @@ import { FattureService } from 'src/app/services/fatture/fatture.service';
 @Component({
   selector: 'app-edit-fatture',
   templateUrl: './edit-fatture.component.html',
-  styleUrls: ['./edit-fatture.component.css']
+  styleUrls: ['./edit-fatture.component.scss']
 })
 export class EditFattureComponent implements OnInit {
 

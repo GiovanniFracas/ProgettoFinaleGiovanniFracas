@@ -8,7 +8,7 @@ import { ClientiService } from 'src/app/services/clienti/clienti.service';
 @Component({
   selector: 'app-edit-cliente',
   templateUrl: './edit-cliente.component.html',
-  styleUrls: ['./edit-cliente.component.css']
+  styleUrls: ['./edit-cliente.component.scss']
 })
 export class EditClienteComponent implements OnInit {
   showOp:boolean=false
