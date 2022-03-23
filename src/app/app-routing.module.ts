@@ -13,6 +13,7 @@ import { AddClienteComponent } from './clienti-components/add-cliente/add-client
 import { EditClienteComponent } from './clienti-components/edit-cliente/edit-cliente.component';
 import { ClienteDetailComponent } from './clienti-components/cliente-detail/cliente-detail.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path:'', component: LoginComponent},
@@ -41,6 +42,7 @@ const routes: Routes = [
   { path:"fatture/clienti/:id/page/:page",component: FattureClienteComponent ,canActivate: [LoginGuard] },
 
   { path:"signUp",component: SignUpComponent  },
+  { path:"home",component: HomeComponent ,canActivate: [LoginGuard]  },
 
 
 ];

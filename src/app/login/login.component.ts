@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('currentUser', JSON.stringify(data.id));
       this.authService.currentUser = data;
       console.log(data);
-      this.router.navigate(['clienti/page/0'])
+      this.router.navigate(['home'])
     })
   }
 

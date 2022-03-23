@@ -1,0 +1,10 @@
+body {
+  background: url("/src/assets/img/download.png") no-repeat center center fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+section {
+  background: url("/src/assets/img/download.png") no-repeat center center fixed;
+}
+/*# sourceMappingURL=home.component.css.map */

@@ -11,11 +11,6 @@ import { ClientiService } from 'src/app/services/clienti/clienti.service';
 })
 export class ClienteDetailComponent implements OnInit {
 
-  showCliente:boolean=true
-  showOp:boolean=false
-  showLg:boolean=false
-
-
   clienteDetail!:Clienti
 
   constructor(private clienteService:ClientiService, private route:ActivatedRoute, private router:Router) { }
@@ -26,20 +21,11 @@ export class ClienteDetailComponent implements OnInit {
         this.clienteDetail = res;
       })
     })
-
   }
-
   selectToEdit(){
     this.router.navigate(["editClienti", this.clienteDetail.id])
   }
-
   addFattura(){
     this.router.navigate(["addFatture", this.clienteDetail.id])
-
   }
-
-
-
-
-
 }

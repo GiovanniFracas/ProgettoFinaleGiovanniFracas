@@ -1,11 +1,11 @@
-<div id="megalodonte">
-  <div class="sfondo">
-    <div class="wrapper mt-5 fadeInDown text-center">
-      <div id="formContent" class="pt-5">
-        <h2>Login</h2>
-        <hr id="spacer" />
-        <!-- Login Form -->
-        <form>
+<html>
+  <body>
+    <div class="wrapper text-center">
+      <h2>Login</h2>
+      <hr />
+      <!-- form -->
+      <form>
+        <div class="inputs">
           <input
             [(ngModel)]="payload.username"
             type="email"
@@ -22,23 +22,24 @@
             name="password"
             placeholder="password"
           />
-          <button
-            id="subBtn"
-            type="submit"
-            class="fadeIn btn btn-primary fourth"
-            (click)="login()"
-          >
-            Login
-          </button>
-        </form>
-      </div>
+        </div>
+        <button
+          id="subBtn"
+          type="submit"
+          class="text-center btn btn-success fourth"
+          (click)="login()"
+        >
+          Login
+        </button>
+        <hr />
+        <button
+          class="text-center btn btn-outline-dark fourth"
+          [routerLink]="['/signUp']"
+          routerLinkActive="router-link-active"
+        >
+          Registrati
+        </button>
+      </form>
     </div>
-  </div>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-    <path
-      fill="#155557"
-      fill-opacity="1"
-      d="M0,192L48,176C96,160,192,128,288,122.7C384,117,480,139,576,165.3C672,192,768,224,864,224C960,224,1056,192,1152,181.3C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-    ></path>
-  </svg>
-</div>
+  </body>
+</html>

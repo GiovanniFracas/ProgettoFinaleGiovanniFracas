@@ -1,72 +1,126 @@
-<form class="mt-5">
-    <div class="form-row">
-      <div class="form-group col-md-10">
-        <h2 id="head" class="mb-4  ">Aggiungi un Cliente</h2>
-      </div>
-      <div class="form-group col-md-2">
-        <h2 class=" btnBack float-right ro" [routerLink]="['/clienti/page/:page']" routerLinkActive="router-link-active" ><i class="bi bi-arrow-left-square-fill"></i></h2>
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label>Nome</label>
-        <input type="text" [(ngModel)]="newCliente.nomeContatto"  name="nomeContatto" class="form-control">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Cognome</label>
-        <input type="text" [(ngModel)]="newCliente.cognomeContatto" name="cognomeContatto" class="form-control">
-      </div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-          <label>Ragione Sociale</label>
-          <input type="text" [(ngModel)]="newCliente.ragioneSociale" name="ragioneSociale" class="form-control">
+<div class="container mr-5">
+  <form class="mt-5">
+      <div class="form-row">
+        <div class="form-group col-md-10">
+          <h2 id="head" class="mb-4  ">Aggiungi un Cliente</h2>
         </div>
-        <div class="form-group col-md-6">
-          <label>Partita IVA</label>
-          <input type="number" [(ngModel)]="newCliente.partitaIva" name="partitaIva" class="form-control">
+        <div class="form-group col-md-2">
+          <h2 class=" btnBack float-right ro" [routerLink]="['/clienti/page/:page']" routerLinkActive="router-link-active" ><i class="bi bi-arrow-left-square-fill"></i></h2>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label>Email</label>
-          <input type="email" [(ngModel)]="newCliente.email" name="email" class="form-control">
+          <label>Nome</label>
+          <input type="text" [(ngModel)]="newCliente.nomeContatto"  name="nomeContatto" class="form-control">
         </div>
         <div class="form-group col-md-6">
-          <label>PEC</label>
-          <input type="email" [(ngModel)]="newCliente.pec" name="pec" class="form-control">
+          <label>Cognome</label>
+          <input type="text" [(ngModel)]="newCliente.cognomeContatto" name="cognomeContatto" class="form-control">
         </div>
       </div>
       <div class="form-row">
+          <div class="form-group col-md-6">
+            <label>Ragione Sociale</label>
+            <input type="text" [(ngModel)]="newCliente.ragioneSociale" name="ragioneSociale" class="form-control">
+          </div>
+          <div class="form-group col-md-6">
+            <label>Partita IVA</label>
+            <input type="number" [(ngModel)]="newCliente.partitaIva" name="partitaIva" class="form-control">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label>Email</label>
+            <input type="email" [(ngModel)]="newCliente.email" name="email" class="form-control">
+          </div>
+          <div class="form-group col-md-6">
+            <label>PEC</label>
+            <input type="email" [(ngModel)]="newCliente.pec" name="pec" class="form-control">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label >Telefono Contatto</label>
+            <input type="text" class="form-control" [(ngModel)]="newCliente.telefonoContatto" name="telefonoContatto" id="telefonoContattoInput">
+          </div>
+          <div class="form-group col-md-6">
+            <label>Email Contatto</label>
+            <input type="email" class="form-control" [(ngModel)]="newCliente.emailContatto" name="emailContatto" id="emailContattoInput">
+          </div>
+        </div>
+      <div class="form-row">
         <div class="form-group col-md-6">
-          <label >Telefono Contatto</label>
-          <input type="text" class="form-control" [(ngModel)]="newCliente.telefonoContatto" name="telefonoContatto" id="telefonoContattoInput">
+          <label>Telefono</label>
+          <input type="phone" [(ngModel)]="newCliente.telefono" name="telefono" class="form-control">
         </div>
         <div class="form-group col-md-6">
-          <label>Email Contatto</label>
-          <input type="email" class="form-control" [(ngModel)]="newCliente.emailContatto" name="emailContatto" id="emailContattoInput">
+          <label>Tipo Cliente</label>
+          <select class="form-control" [(ngModel)]="newCliente.tipoCliente" name="ragioneSociale">
+            <option selected>...</option>
+            <option>SRL</option>
+            <option>SPA</option>
+            <option>SAS</option>
+            <option>PA</option>
+          </select>
         </div>
       </div>
-    <div class="form-row">
+
+
+      <h3>Sede Operativa</h3>
       <div class="form-group col-md-6">
-        <label>Telefono</label>
-        <input type="phone" [(ngModel)]="newCliente.telefono" name="telefono" class="form-control">
+        <label>Indirizzo</label>
+        <input type="text" [(ngModel)]="newCliente.indirizzoSedeOperativa.via"  name="viaS" class="form-control">
       </div>
       <div class="form-group col-md-6">
-        <label>Tipo Cliente</label>
-        <select class="form-control" [(ngModel)]="newCliente.tipoCliente" name="ragioneSociale">
-          <option selected>...</option>
-          <option>SRL</option>
-          <option>SPA</option>
-          <option>SAS</option>
-          <option>PA</option>
-        </select>
+        <label>Civico</label>
+        <input type="text" [(ngModel)]="newCliente.indirizzoSedeOperativa.civico"  name="civicoS" class="form-control">
       </div>
+      <div class="form-group col-md-6">
+        <label>Cap</label>
+        <input type="text" [(ngModel)]="newCliente.indirizzoSedeOperativa.cap"  name="capS" class="form-control">
+      </div>
+      <div class="form-group col-md-6">
+        <label>Località</label>
+        <input type="text" [(ngModel)]="newCliente.indirizzoSedeOperativa.localita"  name="localitaS" class="form-control">
+      </div>
+      <div class="form-group col-md-6">
+        <label>Provincia</label>
+        <input type="text" [(ngModel)]="newCliente.indirizzoSedeOperativa.comune.provincia.nome"  name="provinciaS" class="form-control">
+      </div>
+      <div class="form-group col-md-6">
+        <label>Comune</label>
+        <input type="text" [(ngModel)]="newCliente.indirizzoSedeOperativa.comune.nome"  name="nomeS" class="form-control">
+      </div>
+
+
+
+    <h3>sede Legale</h3>
+    <div class="form-group col-md-6">
+      <label>Indirizzo</label>
+      <input type="text" [(ngModel)]="newCliente.indirizzoSedeLegale.via"  name="viaL" class="form-control">
     </div>
-  </form>
+    <div class="form-group col-md-6">
+      <label>Civico</label>
+      <input type="text" [(ngModel)]="newCliente.indirizzoSedeLegale.civico"  name="civicoL" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Cap</label>
+      <input type="text" [(ngModel)]="newCliente.indirizzoSedeLegale.cap"  name="capL" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Località</label>
+      <input type="text" [(ngModel)]="newCliente.indirizzoSedeLegale.localita"  name="localitaL" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Provincia</label>
+      <input type="text" [(ngModel)]="newCliente.indirizzoSedeLegale.comune.provincia.nome"  name="provinciaL" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Comune</label>
+      <input type="text" [(ngModel)]="newCliente.indirizzoSedeLegale.comune.nome"  name="nomeL" class="form-control">
+    </div> -->
+    </form>
 
-
-
-
-  <button type="submit" class="btn btnAddUser col my-3 btn-success" (click)="addCliente(newCliente)">Aggiungi</button>
+    <button type="submit" class="btn btnAddUser col my-3 btn-success" (click)="addCliente(newCliente)">Aggiungi</button>
+</div>
 

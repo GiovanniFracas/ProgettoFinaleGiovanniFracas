@@ -33,10 +33,8 @@ export class EditFattureComponent implements OnInit {
 
    saveFattura(editFattura:Fatture) {
     this.fattureService.updateFatture(editFattura).subscribe(data => {
-     console.log(
-       'Modifica riuscita!',
-       'Hai modificato una fattura!',
-       'success'
+     alert(
+       'Modifica riuscita!'
      )
      this.router.navigate(["fattureDetail", this.editFattura.id])
     })

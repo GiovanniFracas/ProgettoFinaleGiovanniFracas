@@ -1,15 +1,21 @@
-<div class="wrapper">
-  <div class="mt-5">
-
-    <div class="row ">
-      <div class="col-8">
-      <button id="addC" class="btn mb-3 btn-add btn-outline-success" [routerLink]="['/addCliente']" routerLinkActive="router-link-active" >Aggiungi Cliente <i class="bi bi-person-plus-fill"></i> </button>
-    </div>
-
+<div class="container mr-5">
+  <div class="wrapper">
+    <div class="mt-5">
+      <div class="row">
+        <div class="col-8">
+          <button
+            id="addC"
+            class="btn mb-3 btn-add btn-outline-success"
+            [routerLink]="['/addCliente']"
+            routerLinkActive="router-link-active"
+          >
+            Aggiungi Cliente <i class="bi bi-person-plus-fill"></i>
+          </button>
+        </div>
       </div>
 
-    <div class="table-responsive" >
-      <table class="table">
+      <div class="table-responsive">
+        <table class="table">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -21,43 +27,74 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let item of clienti ">
-              <th scope="row">{{item.id}}</th>
-              <td>{{item.ragioneSociale}}</td>
-              <td>{{item.email}}</td>
-              <td>{{item.partitaIva}}</td>
-              <td><button type="button" class="btn btn-sm btn-outline-primary" (click)="fatture(item.id)">Fatture</button></td>
-              <td><button type="button" class="btn btn-sm btn-trash btn-outline-danger" (click)="removeCliente(item)"><i class="bi bi-trash"></i></button></td>
-              <td><button type="button" class="btn btn-sm btn-inf btn-outline-info" (click)="clienteDetail(item)"><i class="bi bi-info-circle"></i></button>
-            </td>
+            <tr *ngFor="let item of clienti">
+              <th scope="row">{{ item.id }}</th>
+              <td>{{ item.ragioneSociale }}</td>
+              <td>{{ item.email }}</td>
+              <td>{{ item.partitaIva }}</td>
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-primary"
+                  (click)="fatture(item.id)"
+                >
+                  Fatture
+                </button>
+              </td>
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-trash btn-outline-danger"
+                  (click)="removeCliente(item)"
+                >
+                  <i class="bi bi-trash"></i>
+                </button>
+              </td>
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-inf btn-outline-info"
+                  (click)="clienteDetail(item)"
+                >
+                  <i class="bi bi-info-circle"></i>
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
 
         <!--PAGINATION-->
 
-    <div>
-      <ul class="pagination">
-        <li class="page-item">
-          <a class="page-link" [routerLink]="['/clienti/page/'+primaPagina]">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
-        </li>
-        <li class="" *ngFor="let num of pageNumbers">
-          <a class="page-link"  [ngStyle]="{'background-color': getColor(num)}" [routerLink]="['/clienti/page/'+num]">{{num +1}}</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" [routerLink]="['/clienti/page/'+ultimaPagina]" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
-      </ul>
+        <div>
+          <ul class="pagination">
+            <li class="page-item">
+              <a
+                class="page-link"
+                [routerLink]="['/clienti/page/' + primaPagina]"
+              >
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="" *ngFor="let num of pageNumbers">
+              <a
+                class="page-link"
+                [ngStyle]="{ 'background-color': getColor(num) }"
+                [routerLink]="['/clienti/page/' + num]"
+                >{{ num + 1 }}</a
+              >
+            </li>
+            <li class="page-item">
+              <a
+                class="page-link"
+                [routerLink]="['/clienti/page/' + ultimaPagina]"
+                aria-label="Next"
+              >
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
-
-   </div>
 </div>
-
-
-
-

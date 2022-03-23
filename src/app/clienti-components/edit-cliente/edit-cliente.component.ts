@@ -11,40 +11,25 @@ import { ClientiService } from 'src/app/services/clienti/clienti.service';
   styleUrls: ['./edit-cliente.component.scss']
 })
 export class EditClienteComponent implements OnInit {
-  showOp:boolean=false
-  showLg:boolean=false
 
-  editCliente:Clienti = new Clienti
+  editCliente: Clienti = new Clienti;
 
-
-
-
-
-  constructor(private route: ActivatedRoute, private clientiService:ClientiService, private router:Router) { }
+  constructor(private route: ActivatedRoute, private clientiService: ClientiService, private router: Router) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params =>{
-      this.clientiService.getClienteById(params['id']).subscribe(res =>{
-        this.editCliente= res
+    this.route.params.subscribe(params => {
+      this.clientiService.getClienteById(params['id']).subscribe(res => {
+        this.editCliente = res
       })
     })
-
-   }
-
-
-   saveCliente(editCliente:Clienti) {
-     this.clientiService.updateClienti(editCliente).subscribe(data => {
-      console.log(
-        'Modifica riuscita!',
-        'Hai modificato un cliente!',
-        'success'
-      )
+  }
+  saveCliente(editCliente: Clienti) {
+    this.clientiService.updateClienti(editCliente).subscribe(data => {
+      alert('modifica riuscita')
       this.router.navigate(["clienteDetail", this.editCliente.id])
-     })
-   }
-
-
-  back(){
+    })
+  }
+  back() {
     this.router.navigate(["clienteDetail", this.editCliente.id])
   }
 

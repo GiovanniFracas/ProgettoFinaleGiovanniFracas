@@ -25,7 +25,7 @@ export class FattureComponent implements OnInit {
   differenzaPagine!: number;
 
   veraPagina!: number;
-  paginaPiuDieci!:number;
+  paginaPiuDieci!: number;
 
   constructor(private fattureService: FattureService, private router: Router, private route: ActivatedRoute) {
 
@@ -34,6 +34,9 @@ export class FattureComponent implements OnInit {
   ngOnInit(): void {
     this.getPage();
   }
+
+
+  /* get page. Quando sottraendo 10 al numero di pagina corrente se ottengo un numero positivo lo sommo ai valori nell'array pageNumbers per ottenere la vera pagina */
   getPage() {
     this.route.params.subscribe(params => {
       this.fattureService.getFattureByPage(params["page"]).subscribe((fatture: any) => {
@@ -47,7 +50,7 @@ export class FattureComponent implements OnInit {
           this.pageNumbers.push(i);
         }
         this.paginacorrente = params["page"];
-        this.paginaPiuDieci=Number(this.paginacorrente)+10;
+        this.paginaPiuDieci = Number(this.paginacorrente) + 10;
         this.differenzaPagine = this.paginacorrente - 8;
         if (this.differenzaPagine >= 0) {
           this.multiplier = this.multiplier + this.differenzaPagine;
@@ -80,14 +83,18 @@ export class FattureComponent implements OnInit {
     this.multiplier = 0
     this.pagina = null
   }
-  getColor(n:number):string|null{
-    if(n==this.paginacorrente){
+
+  /* ritorna il colore se il numero è lo stesso della pagina corrente */
+  getColor(n: number): string | null {
+    if (n == this.paginacorrente) {
       return 'lightblue'
     }
     return null
   }
-  getRosso(nome: string){
-    if(nome=='PAGATA'){
+
+  /* funzione per capire se la fattura è stata pagata */
+  getRosso(nome: string) {
+    if (nome == 'PAGATA') {
       return 'lightblue'
     }
     return 'pink'

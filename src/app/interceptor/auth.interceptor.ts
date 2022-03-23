@@ -27,8 +27,7 @@ export class AuthInterceptor implements HttpInterceptor {
         .set(
           'Authorization',
           'Bearer ' +
-          'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NjgzNjQyNSwiZXhwIjoxNjQ3NzAwNDI1fQ.wnxec2GivFMIdNKzlfS-TxBe2jBzyXmpfPcilIg6hEhdN3igX0j4EjxOFp2Xv6F7rcIFwFeLMZ-fo81j3brghw'
-        )
+          'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0ODAzMDcwMCwiZXhwIjoxNjQ4ODk0NzAwfQ.aNuK8egaPuuLi24S9dVBuEs_ZlubClofeWSERGUA8C5_wHbufWix9NdLCYXRJBqHmqaW3cqt7C09_81v26yTHg'        )
         .set('X-TENANT-ID', 'fe_0721b'),
     });
     return next.handle(authReq)

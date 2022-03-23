@@ -1,0 +1,40 @@
+@import '/variables.scss';
+body{
+  background: url(../../assets/img/bkFinal.jpg) no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 93vh;
+  max-width: 1920px;
+
+}
+section{
+  position: absolute;
+  bottom: 30%;
+  left: 5%;
+
+  h2{
+    line-height: 3rem;
+  }
+  line-height: 3rem;
+}
+
+@media screen and (min-width: 1920px) {
+  html{
+    background-color: #c1e1c1;
+  }
+  body{
+   margin: auto;
+  }
+  section{
+    left: 10%;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 1920px) {
+  section{
+    left: 20%;
+  }
+}
+
+
+

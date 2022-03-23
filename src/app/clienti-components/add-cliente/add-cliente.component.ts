@@ -12,56 +12,65 @@ import { ClientiService } from 'src/app/services/clienti/clienti.service';
 })
 export class AddClienteComponent implements OnInit {
 
-  showOp:boolean=false
-  showLg:boolean=false
+  newCliente: Clienti = new Clienti();
 
-  newCliente:Clienti = new Clienti();
-
-
-
-  constructor(private clientiService:ClientiService ,private route : ActivatedRoute) { }
+  constructor(private clientiService: ClientiService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-
+    this.newCliente = {
+      id: 0,
+      ragioneSociale: "",
+      partitaIva: "",
+      tipoCliente: "",
+      email: "",
+      pec: "",
+      telefono: "",
+      nomeContatto: "",
+      cognomeContatto: "",
+      telefonoContatto: "",
+      emailContatto: "",
+      dataInserimento: "",
+      dataUltimoContatto: "",
+      fatturatoAnnuale: 0,
+      indirizzoSedeOperativa: {
+        id: 192,
+        via: "",
+        civico: 0,
+        cap: 0,
+        localita: "",
+        comune: {
+          id: 1,
+          nome: "",
+          provincia: {
+            id: 1,
+            nome: "",
+            sigla: ""
+          }
+        }
+      },
+      indirizzoSedeLegale: {
+        id: 191,
+        via: "",
+        civico: 0,
+        cap: 0,
+        localita: "",
+        comune: {
+          id: 1,
+          nome: "",
+          provincia: {
+            id: 1,
+            nome: "",
+            sigla: ""
+          }
+        }
+      }
+    }
   }
+  addCliente(newCliente: Clienti) {
+    this.clientiService.createCliente(newCliente).subscribe(res =>
+      alert('Inserimento riuscito')
+    )
 
-
-  //DISPLAY ELEMENTI
-  showSedeOp(){
-    if(this.showOp == false)
-      this.showOp = true
-    else
-      this.showOp = false
-  }
-
-  showSedeLg(){
-    if(this.showLg == false)
-      this.showLg = true
-    else
-      this.showLg = false
-  }
-
-
-
-
-  addCliente(newCliente:Clienti) {
-
-    //SEDE OPERATIVA
-   /* this.newProvincia = this.newSedeOp.provincia
-    this.newComune = this.newSedeOp.comune
-    newCliente.indirizzoSedeOperativa= this.newSedeOp
-    //SEDE LEGALE
-    this.newProvincia = this.newSedeLg.provincia
-    this.newComune = this.newSedeLg.comune
-    newCliente.indirizzoSedeLegale= this.newSedeLg
-    console.log(newCliente);*/
-
-    this.clientiService.createCliente(newCliente).subscribe(res => console.log(
-      'Inserimento riuscito!',
-      'Hai aggiunto un nuovo cliente!',
-      'success'
-    ))
-    this.newCliente = new Clienti
   };
 
 
